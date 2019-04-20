@@ -1,23 +1,25 @@
 package spring.dependecy.injection.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-import spring.dependecy.injection.service.GreetingServicesImpl;
+import spring.dependecy.injection.service.GreetingService;
 
 @Controller
 public class ConstructorInjectedController {
 	
-	public GreetingServicesImpl greetingService;
+	public GreetingService greetingService;
 	
 	
-	
-	public ConstructorInjectedController(GreetingServicesImpl greetingService) {
+	@Autowired
+	public ConstructorInjectedController(@Qualifier("constructorGreetingServicesImpl")GreetingService greetingService) {
 		this.greetingService = greetingService;
 	}
 
 
 
-	String sayHello() {
+	public String sayHello() {
 		return greetingService.sayGreeting();
 	}
 

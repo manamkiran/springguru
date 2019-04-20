@@ -1,17 +1,19 @@
 package spring.dependecy.injection.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-import spring.dependecy.injection.service.GreetingServicesImpl;
+import spring.dependecy.injection.service.GreetingService;
 
 @Controller
 public class PropertyInjectedController {
 	
 	@Autowired
-	public GreetingServicesImpl greetingService;
+	@Qualifier("propertyGreetingServicesImpl")
+	public GreetingService greetingService;
 	
-	String sayHello() {
+	public String sayHello() {
 		return greetingService.sayGreeting();
 	}
 
