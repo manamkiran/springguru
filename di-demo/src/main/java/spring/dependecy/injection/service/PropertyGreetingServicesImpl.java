@@ -8,7 +8,7 @@ public class PropertyGreetingServicesImpl implements GreetingService{
 	@Override
 	public String sayGreeting() {
 		// TODO Auto-generated method stub
-		return "Proerty Controller saying Hello";
+		return "Property Controller saying Hello";
 	}
 
 }
