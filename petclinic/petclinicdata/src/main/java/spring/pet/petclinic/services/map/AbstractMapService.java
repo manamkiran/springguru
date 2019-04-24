@@ -7,7 +7,7 @@ import java.util.Set;
 
 import spring.pet.petclinic.services.CrudService;
 
-public abstract class AbstractMapService<T, ID> implements CrudService<T, ID>{
+public abstract class AbstractMapService<T, ID>{
 
 	protected Map<ID, T> map = new HashMap<>();
 
