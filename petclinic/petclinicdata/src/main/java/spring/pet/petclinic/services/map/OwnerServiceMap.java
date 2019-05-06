@@ -1,5 +1,7 @@
 package spring.pet.petclinic.services.map;
 
+import java.util.Set;
+
 import org.springframework.stereotype.Service;
 
 import spring.pet.petclinic.model.Owner;
@@ -12,11 +14,6 @@ public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements O
 	public Owner findByLastName(Long lastName) {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public Owner save(Owner object) {
-		return map.put(object.getId(), object);
 	}
 
 }
