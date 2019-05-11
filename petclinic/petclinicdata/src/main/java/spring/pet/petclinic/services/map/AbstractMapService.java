@@ -29,7 +29,7 @@ public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> {
 		return baseEntity;
 	}
 
-	private Long getNextId() {
+	protected Long getNextId() {
 		try {
 		return Collections.max(map.keySet()) + 1;
 		}

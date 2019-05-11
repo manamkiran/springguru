@@ -14,7 +14,7 @@ public class AbstractBaseEntityMapService<T extends BaseEntity> extends Abstract
 		return baseEntity;
 	}
 
-	private Long getNextId() {
+	protected Long getNextId() {
 		return Collections.max(map.keySet()) + 1;
 	}
 
