@@ -18,7 +18,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 	}
 
 	@Override
-	public Vet findByLastName(Long lastName) {
+	public Vet findByLastName(String lastName) {
 		return null;
 	}
 
