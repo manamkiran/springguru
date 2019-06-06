@@ -2,6 +2,8 @@ package spring.pet.petclinic.bootstrap;
 
 import java.time.LocalDate;
 
+import javax.print.attribute.standard.DateTimeAtCompleted;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -11,10 +13,12 @@ import spring.pet.petclinic.model.Pet;
 import spring.pet.petclinic.model.PetType;
 import spring.pet.petclinic.model.Speciality;
 import spring.pet.petclinic.model.Vet;
+import spring.pet.petclinic.model.Visit;
 import spring.pet.petclinic.services.OwnerService;
 import spring.pet.petclinic.services.PetTypeService;
 import spring.pet.petclinic.services.SpecialityService;
 import spring.pet.petclinic.services.VetService;
+import spring.pet.petclinic.services.VisitService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -23,14 +27,16 @@ public class DataLoader implements CommandLineRunner {
 	private final VetService vetService;
 	private final PetTypeService petTypeService;
 	private final SpecialityService specialityService;
+	private final VisitService visitService;
 
 	@Autowired
 	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-			SpecialityService specialityService) {
+			SpecialityService specialityService, VisitService visitService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
 		this.specialityService = specialityService;
+		this.visitService = visitService;
 	}
 
 	@Override
@@ -111,6 +117,12 @@ public class DataLoader implements CommandLineRunner {
 
 		vetService.save(vet2);
 		System.out.println("Vets Loaded");
+
+		Visit catVisit = new Visit();
+		catVisit.setPet(dummy);
+		catVisit.setDate(LocalDate.now());
+		visitService.save(catVisit);
+		System.out.println("Visits Loaded");
 	}
 
 }
