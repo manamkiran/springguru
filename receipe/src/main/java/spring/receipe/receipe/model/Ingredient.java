@@ -1,5 +1,7 @@
 package spring.receipe.receipe.model;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -8,6 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+/**
+ * Created by jt on 6/13/17.
+ */
+@Data
+@EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Ingredient {
 
@@ -16,54 +26,28 @@ public class Ingredient {
 	private Long id;
 
 	private String description;
-	private Double amount;
+    private BigDecimal amount;
 
 	@OneToOne(fetch = FetchType.EAGER)
 	private UnitOfMeasure uom;
 	
 	@ManyToOne
-	private Recipe receipe;
+    private Recipe recipe;
 
-	public Long getId() {
-		return id;
+    public Ingredient() {
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom) {
+        this.description = description;
+        this.amount = amount;
+        this.uom = uom;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
 		this.description = description;
-	}
-
-	public Double getAmount() {
-		return amount;
-	}
-
-	public void setAmount(Double amount) {
 		this.amount = amount;
-	}
-
-	public UnitOfMeasure getUom() {
-		return uom;
-	}
-
-	public void setUom(UnitOfMeasure uom) {
 		this.uom = uom;
+        this.recipe = recipe;
 	}
-
-	public Recipe getReceipe() {
-		return receipe;
-	}
-
-	public void setReceipe(Recipe receipe) {
-		this.receipe = receipe;
-	}
-	
-	
 
 }
