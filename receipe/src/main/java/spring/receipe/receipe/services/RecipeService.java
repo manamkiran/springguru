@@ -1,4 +1,4 @@
-package spring.receipte.receipe.services;
+package spring.receipe.receipe.services;
 
 import java.util.Set;
 

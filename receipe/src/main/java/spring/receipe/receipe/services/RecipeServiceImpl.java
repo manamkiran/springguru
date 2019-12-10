@@ -1,4 +1,4 @@
-package spring.receipte.receipe.services;
+package spring.receipe.receipe.services;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,9 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import spring.receipe.receipe.model.Recipe;
 import spring.receipe.receipe.repositories.RecipeRepository;
 
-/**
- * Created by jt on 6/13/17.
- */
 @Slf4j
 @Service
 public class RecipeServiceImpl implements RecipeService {

@@ -21,9 +21,6 @@ import spring.receipe.receipe.repositories.CategoryRepository;
 import spring.receipe.receipe.repositories.RecipeRepository;
 import spring.receipe.receipe.repositories.UnitOfMeasureRepository;
 
-/**
- * Created by jt on 6/13/17.
- */
 @Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
