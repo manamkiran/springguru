@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
@@ -11,6 +12,7 @@ import lombok.experimental.SuperBuilder;
 @Table(name = "types")
 @Getter
 @Setter
+@NoArgsConstructor
 @SuperBuilder
 public class PetType extends BaseEntity{
 	

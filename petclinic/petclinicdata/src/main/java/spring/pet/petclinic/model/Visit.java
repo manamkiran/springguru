@@ -8,6 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
@@ -15,6 +16,7 @@ import lombok.experimental.SuperBuilder;
 @Table(name = "visits")
 @Getter
 @Setter
+@NoArgsConstructor
 @SuperBuilder
 public class Visit extends BaseEntity {
 

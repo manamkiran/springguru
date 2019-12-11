@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
@@ -19,6 +20,7 @@ import lombok.experimental.SuperBuilder;
 @Table(name = "pets")
 @Getter
 @Setter
+@NoArgsConstructor
 @SuperBuilder
 public class Pet extends BaseEntity {
 
