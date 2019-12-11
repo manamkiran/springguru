@@ -22,8 +22,14 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
 	@Override
 	public Owner findByLastName(String lastName) {
-		// TODO Auto-generated method stub
-		return null;
+		if (lastName == null) {
+			return null;
+		}
+		return this.findAll()
+				.stream()
+				.filter(owner -> lastName.equalsIgnoreCase(owner.getLastName()))
+				.findFirst()
+				.orElse(null);
 	}
 
 	public Owner save(Owner owner) {
