@@ -19,7 +19,7 @@ public class OwnersController {
 		this.ownerService = ownerService;
 	}
 
-	@GetMapping({ "/", "" })
+	@GetMapping({ "/", "","/index" })
 	public String listOwners(Model model) {
 
 		model.addAttribute("owners", ownerService.findAll());
@@ -27,7 +27,7 @@ public class OwnersController {
 	}
 	
 	@GetMapping("/find")
-	private String findOwner() {
+	public String findOwner() {
 		return "NotImplementedYet";
 	}
 
