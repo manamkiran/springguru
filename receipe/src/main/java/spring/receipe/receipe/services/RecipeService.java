@@ -10,4 +10,6 @@ import spring.receipe.receipe.model.Recipe;
 public interface RecipeService {
 
     Set<Recipe> getRecipes();
+
+	Recipe findById(long recipeId);
 }
