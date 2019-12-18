@@ -2,6 +2,7 @@ package spring.receipe.receipe.services;
 
 import java.util.Set;
 
+import spring.receipe.receipe.commands.RecipeCommand;
 import spring.receipe.receipe.model.Recipe;
 
 /**
@@ -12,4 +13,6 @@ public interface RecipeService {
     Set<Recipe> getRecipes();
 
 	Recipe findById(long recipeId);
+	
+	RecipeCommand saveRecipeCommand(RecipeCommand recipeCommand);
 }
