@@ -73,4 +73,15 @@ public class RecipeServiceImplTest {
 		Mockito.verify(recipeRepository, never()).findAll();
 
 	}
+
+	@Test
+	public void testDeleteById() throws Exception {
+
+		Long idToDelete = 1L;
+
+		recipeService.deleteById(idToDelete);
+
+		Mockito.verify(recipeRepository, times(1)).deleteById(idToDelete);
+	}
+
 }
